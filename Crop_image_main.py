@@ -31,19 +31,21 @@ def get_bbox(metadata_file):
     else: bbox =[]
     return bbox
 
-def main(image_file, metadata_file, output_file):
+def main(image_file, metadata_file, output_file, increase=0.05):
 
     im = Image.open(image_file)
 
     bbox = get_bbox(metadata_file)
 
     if bbox:
-        # 10% increase of the bbox, metadata bbox is very tight sometime too tight
+        # 5% increase by default of the bbox, metadata bbox is very tight sometime too tight
+        # increase factor in each direction
+        factor = increase/2
         left,top,right,bottom = bbox
-        h_increase = int(abs((right-left)*0.05))
-        v_increase = int(abs((-left)*0.05))
-        bbox = [left-h_increase, top-v_increase, right+h_increase, bottom+v_increase]
-        im1 = im.crop(bbox) # bbox [left,top,right,bottom]
+        h_increase = int(abs((right-left)*factor))
+        v_increase = int(abs((bottom-top)*factor))
+        new_bbox = (left-h_increase, top-v_increase, right+h_increase, bottom+v_increase)
+        im1 = im.crop(new_bbox) # bbox (left,top,right,bottom)
 
     else:
         # if no bounding box detected
