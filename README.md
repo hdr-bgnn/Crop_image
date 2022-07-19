@@ -35,14 +35,14 @@ python Crop_image_main.py INHS_FISH_000742.jpg INHS_FISH_000742.json INHS_FISH_0
 The container can be download here:
 
 ```
-docker pull ghcr.io/hdr-bgnn/crop_image/crop_image:latest
+docker pull ghcr.io/hdr-bgnn/crop_image:latest
 #or 
-singualarity docker://ghcr.io/hdr-bgnn/crop_image/crop_image:latest
+singualarity docker://ghcr.io/hdr-bgnn/crop_image:latest
 ```
 
 Container Usage: 
 
-In this section the name of the container "crop_image_0.0.2.sif" depending on the version you are downloading
+In this section the name of the container "crop_image_0.0.2.sif" will depend on the version you are downloading or the name you give to container .sif 
 
 The usage can be display like this: 
 
