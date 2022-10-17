@@ -23,12 +23,11 @@ def get_bbox(metadata_file):
 
     f = open(metadata_file)
     data = json.load(f)
-    first_value = list(data.values())[0]
+    bbox = []
 
-    if first_value['has_fish']==True:
-
-        bbox = first_value['fish'][0]['bbox']
-    else: bbox =[]
+    if 'fish' in data:
+	if data['fish'][fish_num]>0:
+		bbox = data['fish']['bbox']
     return bbox
 
 def main(image_file, metadata_file, output_file, increase=0.05):
@@ -53,6 +52,11 @@ def main(image_file, metadata_file, output_file, increase=0.05):
         im1 = Image.fromarray(np.zeros(im.size))
 
     im1.save(output_file)
+
+def show_usage():
+	
+	print()
+	print(''/n)
 
 if __name__ == '__main__':
 
