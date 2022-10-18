@@ -26,8 +26,9 @@ def get_bbox(metadata_file):
     bbox = []
 
     if 'fish' in data:
-	if data['fish'][fish_num]>0:
-		bbox = data['fish']['bbox']
+        if data['fish']['fish_num']>0:
+             bbox = data['fish']['bbox']
+             
     return bbox
 
 def main(image_file, metadata_file, output_file, increase=0.05):
@@ -53,11 +54,20 @@ def main(image_file, metadata_file, output_file, increase=0.05):
 
     im1.save(output_file)
 
+    
 def show_usage():
-	
-	print()
-	print(''/n)
+    
+    print()
+    print(f'Usage : {sys.argv[0]} <original_image.jpg> <metadata.json> <cropped_image.jpg>\n')
+    print()
 
 if __name__ == '__main__':
-
-    main(sys.argv[1],sys.argv[2],sys.argv[3])
+    
+    if len(sys.argv) == 4:
+        image_file = sys.argv[1]
+        metadata_file = sys.argv[2]
+        output_file = sys.argv[3]
+        main(image_file, metadata_file, output_file)
+        
+    else:
+        show_usage()
