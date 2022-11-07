@@ -10,16 +10,31 @@ everything is wrap into a main function executable via
 python crop_main.py <image> <metadatafile> <output_crop>
 """
 
-import os
 import sys
 import json
 import numpy as np
+import argparse
 from PIL import Image, ImageFile
-import pandas as pd
-from pathlib import Path
+
+# Some of the image are truncated and trigger an error the follow line solve the problem
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def get_bbox(metadata_file):
+    '''
+    From metadata.json (drexel_metadata_reformatter.py) extract the fish bounding box.
+    Version extracting from the reformat see (https://github.com/hdr-bgnn/drexel_metadata_formatter)
+
+    Parameters
+    ----------
+    metadata_file : string
+        location/name of the json file containing the metadata to be extracted.
+
+    Returns
+    -------
+    bbox : list
+        list containing the bbox around the fish [left, top, right, bottom].
+
+    '''
 
     f = open(metadata_file)
     data = json.load(f)
@@ -32,6 +47,27 @@ def get_bbox(metadata_file):
     return bbox
 
 def main(image_file, metadata_file, output_file, increase=0.05):
+    '''
+    Extract the fish bbox from the metadatafile.json and crop the fish and save the result in outputfile
+
+    Parameters
+    ----------
+    image_file : string
+        DESCRIPTION. filename location of the image .jpg
+    metadata_file : string
+        DESCRIPTION. filename location of the metadata file .json
+    output_file : string
+        DESCRIPTION. filename location where to save the cropped image
+    increase : int, optional
+        DESCRIPTION. The default is 0.05. increase of the size of the box around the fish per dimension
+        width + 5% and height + 5%
+
+    Returns
+    -------
+    None.
+
+    '''
+    
 
     im = Image.open(image_file)
 
@@ -39,7 +75,7 @@ def main(image_file, metadata_file, output_file, increase=0.05):
 
     if bbox:
         # 5% increase by default of the bbox, metadata bbox is very tight sometime too tight
-        # increase factor in each direction
+        # increase factor in each direction (width height)
         factor = increase/2
         left,top,right,bottom = bbox
         h_increase = int(abs((right-left)*factor))
@@ -54,6 +90,12 @@ def main(image_file, metadata_file, output_file, increase=0.05):
 
     im1.save(output_file)
 
+def argument_parser():
+    parser = argparse.ArgumentParser(description='Crop the fish image from metadata.json.')
+    parser.add_argument('input_image', help='Path of input original fish image format JPG image file.')
+    parser.add_argument('input_metadata', help='Path of input drexel_metadata_reformatted format JSON metadata file.')
+    parser.add_argument('output', help='Path of output cropped fish image format JPG image file.')
+    return parser
     
 def show_usage():
     
@@ -63,11 +105,7 @@ def show_usage():
 
 if __name__ == '__main__':
     
-    if len(sys.argv) == 4:
-        image_file = sys.argv[1]
-        metadata_file = sys.argv[2]
-        output_file = sys.argv[3]
-        main(image_file, metadata_file, output_file)
+    parser = argument_parser()
+    args = parser.parse_args()
+    main(args.input_image, args.input_metadata, args.output)
         
-    else:
-        show_usage()
