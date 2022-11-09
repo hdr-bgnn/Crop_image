@@ -2,7 +2,7 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches: ['new_BGNN_version']
+    branches: ['new-input-format']
 
 env:
   REGISTRY: ghcr.io
