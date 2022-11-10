@@ -18,7 +18,7 @@ This repo is linked to main BGNN Fish project rpo [BGNN_Snakemake](https://githu
 
 Input example : 
   + fish image .jpg [see INHS_FISH_000742.jpg](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742.jpg)
-  + Metadata.json [see INHS_FISH_000742.json](https://github.com/hdr-bgnn/Crop_image/blob/new-input-format/Test_data/INHS_FISH_000742.json)
+  + Metadata.json [see INHS_FISH_000742.json](Test_data/INHS_FISH_000742.json)
   
 Ouput :
   + Cropped image .jpg [see INHS_FISH_000742_cropped.jpg](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742_cropped.jpg)
