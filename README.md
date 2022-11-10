@@ -30,13 +30,13 @@ you need the environment define by crop_env.yml. I suggest to use anaconda or mi
 Crop_image_main.py [-h] [--increase] input_image imput_metadata output
 ```
 
-Example using the Test_data with 5% increase in size
+Example using the Test_data with 10% increase in size
 
 ```
-Crop_image_main.py INHS_FISH_000742.jpg INHS_FISH_000742.json INHS_FISH_000742_cropped.jpg --increase 0.05
+Crop_image_main.py INHS_FISH_000742.jpg INHS_FISH_000742.json INHS_FISH_000742_cropped.jpg --increase 0.10
 ```
 
-The `increase` parameter defines the percentage increase of the bounding box from the original metadata size in percentage for each direction (5% increase in width and 5% in height as 0.05)
+The `increase` parameter defines the percentage increase of the bounding box from the original metadata size in percentage for each direction (in this example 10% increase in width and in height is written as 0.10). The default value in 0.05.
 
 ## 3 - Container and test
 
