@@ -1,8 +1,8 @@
 name: Create and publish a Docker image
 
 on:
-  push:
-    branches: ['new_BGNN_version']
+  release:
+    types: [published]
 
 env:
   REGISTRY: ghcr.io
