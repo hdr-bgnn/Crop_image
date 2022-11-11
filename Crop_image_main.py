@@ -66,8 +66,8 @@ def Crop(image, bbox, increase=0.05):
 
     Returns
     -------
-    im1 : TYPE
-        DESCRIPTION.
+    im1 : image PIL format
+        DESCRIPTION. Cropped image
 
     '''
     
@@ -76,8 +76,10 @@ def Crop(image, bbox, increase=0.05):
     factor = increase/2
     left,top,right,bottom = bbox
    
-    h_increase = int(abs((right-left)*factor))
-    v_increase = int(abs((bottom-top)*factor))
+    #h_increase = int(abs((right-left)*factor))
+    #v_increase = int(abs((bottom-top)*factor))
+    h_increase = (right-left)*factor
+    v_increase = (bottom-top)*factor    
     new_bbox = (left-h_increase, top-v_increase, right+h_increase, bottom+v_increase)
     
     # cutoff the cropping to the original image boundary
