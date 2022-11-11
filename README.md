@@ -9,19 +9,19 @@ This repo is linked to main BGNN Fish project rpo [BGNN_Snakemake](https://githu
   + The metadata json file contained the bounding box of the fish which use to crop the fish [here is an exmaple](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742_cropped.jpg). We increase the size of the bounding box around the fish by 5% increase (by default, parameter) in case the bounding box (from the metadata) would truncate the edge of the fish. The Cropped image will be used later by a segmentation algorithm such as [trait_segmenation](https://github.com/hdr-bgnn/BGNN-trait-segmentation)
 
 **input**
-![original fish image](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742.jpg)
+![original fish image](Test_data/INHS_FISH_000742.jpg)
 
 **Cropped output**
-![Cropped fish image](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742_cropped.jpg)
+![Cropped fish image](Test_data/INHS_FISH_000742_cropped.jpg)
 
 ## 2 - Usage
 
 Input example : 
-  + fish image .jpg [see INHS_FISH_000742.jpg](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742.jpg)
+  + fish image .jpg [see INHS_FISH_000742.jpg](Test_data/INHS_FISH_000742.jpg)
   + Metadata.json [see INHS_FISH_000742.json](Test_data/INHS_FISH_000742.json)
   
 Ouput :
-  + Cropped image .jpg [see INHS_FISH_000742_cropped.jpg](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/INHS_FISH_000742_cropped.jpg)
+  + Cropped image .jpg [see INHS_FISH_000742_cropped.jpg]Test_data/INHS_FISH_000742_cropped.jpg)
 
 Usage in python
 you need the environment define by crop_env.yml. I suggest to use anaconda or miniconda as environment manager
@@ -58,7 +58,7 @@ The usage can be display like this:
 singularity run crop_image_0.0.2.sif
 ```
 
-To execute the code on the [test data](https://github.com/hdr-bgnn/Crop_image/blob/main/Test_data/), run the following
+To execute the code on the [test data](Test_data/), run the following
 
 ```
 singularity exec crop_image_0.0.2.sif Crop_image_main.py Test_data/INHS_FISH_000742.jpg Test_data/INHS_FISH_000742.json Test_data/INHS_FISH_000742_cropped_test.jpg
