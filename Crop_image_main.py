@@ -51,7 +51,7 @@ def Crop(image, bbox, increase=0.05):
     '''
     Crop the image using the bounding box, expected format [left,top,right,bottom] and adding
     an increase in size vertically and horizontally.
-    the function will cutoff the crop to match the boundary of the image if the increase go over the 
+    The function will cut off the crop at the boundary of the image if it would otherwise exceed the 
     image boundary
 
     Parameters
