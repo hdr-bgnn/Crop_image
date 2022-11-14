@@ -103,7 +103,7 @@ def main(image_file, metadata_file, output_file, increase=0.05):
     output_file : string
         DESCRIPTION. filename location where to save the cropped image
     increase : float, optional
-        DESCRIPTION. The default is 0.05. increase of the size of the box around the fish per dimension
+        DESCRIPTION. Fractional increase of the size of the box around the fish in each dimension. The default is 0.05 (5%).
         width + 5% and height + 5%
 
     Returns
