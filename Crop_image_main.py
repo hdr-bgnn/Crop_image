@@ -50,7 +50,7 @@ def get_bbox(metadata_file):
 def Crop(image, bbox, increase=0.05):
     '''
     Crop the image using the bounding box, expected format [left,top,right,bottom] and adding
-    a increase in size vertically and horizontally
+    an increase in size vertically and horizontally.
     the function will cutoff the crop to match the boundary of the image if the increase go over the 
     image boundary
 
