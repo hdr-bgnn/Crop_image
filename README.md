@@ -35,7 +35,7 @@ Example using the Test_data with 10% increase in size
 Crop_image_main.py INHS_FISH_000742.jpg INHS_FISH_000742.json INHS_FISH_000742_cropped.jpg --increase 0.10
 ```
 
-The `increase` parameter defines the percentage increase of the bounding box from the original metadata size in percentage for each direction (in this example 10% increase in width and in height is written as 0.10). The default value in 0.05.
+The `--increase` parameter defines the fractional increase of the bounding box from the original metadata size in each direction (10% in this example). The default value in 0.05.
 
 ## 3 - Container and test
 
