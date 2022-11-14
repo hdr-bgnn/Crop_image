@@ -61,7 +61,7 @@ def Crop(image, bbox, increase=0.05):
     bbox : list
         DESCRIPTION. list with bbox coordinate format [left,top,right,bottom]
     increase : float, optional
-        DESCRIPTION. The default is 0.05. increase of the size of the box around the fish per dimension
+        DESCRIPTION. Fractional increase of the bounding box around the fish in each dimension. The default is 0.05 (5%).
         width + 5% and height + 5%
 
     Returns
