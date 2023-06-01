@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/511261581.svg)](https://zenodo.org/badge/latestdoi/511261581)
+
 # Crop_image
 Small repository to store the "cropping" step of the BGNN project.
 
