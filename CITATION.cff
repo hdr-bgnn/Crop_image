@@ -1,0 +1,23 @@
+cff-version: 1.0.0
+date-released: "2023-05-30"
+authors:
+  - family-names: Tabarin
+    given-names: Thibault
+    orcid: "https://orcid.org/0000-0003-4256-849X"
+  - family-names: Bradley
+    given-names: John
+    orcid: "https://orcid.org/0000-0003-3858-848X"
+  - family-names: Lapp
+    given-names: Hilmar
+    orcid: "https://orcid.org/0000-0001-9107-0714"
+identifiers:
+  - description: "Crop_Image is a small repository to store the "cropping" step of the BGNN Minnow_Segmented_Traits project. This repo is linked to main BGNN Core Workflow that encompasses a complete analysis workflow. It contained the code for the "Cropping" part."
+    type: doi
+    value: 10.5281/zenodo.7987485
+keywords:
+  - "imageomics"
+  - "image"
+license: MIT
+repository-code: "https://github.com/hdr-bgnn/Crop_image"
+title: "Crop image"
+version: 0.0.4
