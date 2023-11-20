@@ -1,6 +1,6 @@
 cff-version: 1.0.0
 date-released: "2023-05-30"
-abstract: "Crop_Image is a small repository to store the 'cropping' step of the BGNN Minnow_Segmented_Traits project. This repo is linked to main BGNN Core Workflow that encompasses a complete analysis workflow. It contained the code for the 'Cropping' part."
+abstract: "Crop_Image is a small repository to store the "cropping" step of the BGNN Minnow_Segmented_Traits project. This repo is linked to main BGNN Core Workflow that encompasses a complete analysis workflow. It contained the code for the "Cropping" part."
 authors:
   - family-names: Tabarin
     given-names: Thibault
